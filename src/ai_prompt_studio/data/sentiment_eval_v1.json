@@ -1,0 +1,25 @@
+{
+  "dataset_id": "sentiment-synthetic",
+  "name": "Synthetic Sentiment Classification",
+  "description": "Twelve manually reviewed synthetic examples covering core labels and edge cases. Contains no private customer data.",
+  "version": "1.0.0",
+  "created_at": "2026-11-24T00:00:00Z",
+  "evaluation_criteria": [
+    "Return exactly one of positive, negative, neutral, or mixed.",
+    "Match the manually reviewed expected label."
+  ],
+  "test_cases": [
+    {"case_id":"pos-01","source_text":"The setup was quick and the interface is delightful.","expected_label":"positive","deterministic_checks":[{"check":"exact_label"},{"check":"nonempty"}],"human_guidance":"Check whether the dominant sentiment is clearly favorable."},
+    {"case_id":"pos-02","source_text":"Support solved my issue in minutes. Excellent service.","expected_label":"positive","deterministic_checks":[{"check":"exact_label"},{"check":"nonempty"}]},
+    {"case_id":"pos-03","source_text":"It does exactly what I need and has been reliable so far.","expected_label":"positive","deterministic_checks":[{"check":"exact_label"},{"check":"nonempty"}]},
+    {"case_id":"neg-01","source_text":"The device stopped working after one day and the replacement never arrived.","expected_label":"negative","deterministic_checks":[{"check":"exact_label"},{"check":"nonempty"}]},
+    {"case_id":"neg-02","source_text":"Confusing instructions, repeated crashes, and no useful support.","expected_label":"negative","deterministic_checks":[{"check":"exact_label"},{"check":"nonempty"}]},
+    {"case_id":"neg-03","source_text":"I regret buying this because every promised feature is missing.","expected_label":"negative","deterministic_checks":[{"check":"exact_label"},{"check":"nonempty"}]},
+    {"case_id":"neu-01","source_text":"The package arrived on Tuesday and contained three items.","expected_label":"neutral","deterministic_checks":[{"check":"exact_label"},{"check":"nonempty"}]},
+    {"case_id":"neu-02","source_text":"The application is available for Windows and macOS.","expected_label":"neutral","deterministic_checks":[{"check":"exact_label"},{"check":"nonempty"}]},
+    {"case_id":"mix-01","source_text":"The delivery was late, but the product itself is excellent.","expected_label":"mixed","deterministic_checks":[{"check":"exact_label"},{"check":"nonempty"}]},
+    {"case_id":"mix-02","source_text":"Beautiful design and strong performance, although the battery life is disappointing.","expected_label":"mixed","deterministic_checks":[{"check":"exact_label"},{"check":"nonempty"}]},
+    {"case_id":"edge-01","source_text":"Well, that update certainly changed everything.","expected_label":"neutral","deterministic_checks":[{"check":"exact_label"},{"check":"nonempty"}],"human_guidance":"Ambiguous wording lacks enough evidence for a positive or negative label."},
+    {"case_id":"edge-02","source_text":"I expected worse; it is not terrible, but I would not recommend it.","expected_label":"negative","deterministic_checks":[{"check":"exact_label"},{"check":"nonempty"}],"human_guidance":"Handle negation and a weakly negative recommendation."}
+  ]
+}
